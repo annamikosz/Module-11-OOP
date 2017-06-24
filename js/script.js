@@ -80,7 +80,7 @@ $(function() {
     removeCard: function() {
       his.$element.remove();
     }
-  }
+  };
 
   //BOARD
   var board = {

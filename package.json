@@ -1,0 +1,28 @@
+{
+  "name": "module-11-6",
+  "version": "1.0.0",
+  "description": "kanban board",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annamikosz/Module-11-OOP.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Anna Mikosz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annamikosz/Module-11-OOP/issues"
+  },
+  "homepage": "https://github.com/annamikosz/Module-11-OOP#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
