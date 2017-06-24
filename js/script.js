@@ -78,7 +78,7 @@ $(function() {
   }
   Card.prototype = {
     removeCard: function() {
-      his.$element.remove();
+      this.$element.remove();
     }
   };
 

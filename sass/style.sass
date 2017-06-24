@@ -1,0 +1,76 @@
+
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Lato|Open+Sans')
+*
+  box-sizing: border-box
+
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #BAB9F1
+  margin: 0
+  padding: 0
+  height: 100%
+button
+  font-size: 12px
+  font-family: 'Lato', sans-serif
+  background-color: #4A48B4
+  color: #fff
+  padding: 10px
+  border-radius: 10px
+  cursor: pointer
+  transition: linear .5s
+button:hover
+  background-color: #302EA3
+button.btn-delete:hover
+  background-color: #FF4C4C
+
+h1, h2
+  font-family: 'Architects Daughter', cursive
+  text-transform: uppercase
+p
+  font-family: 'Lato', sans-serif
+
+.board
+  width: 80%
+  min-height: 100vh
+  text-align: center
+  background-color: #6866CB
+  h1
+    color: #fff
+  button.create-column
+    margin-bottom: 15px
+  .column-container
+    display: flex
+    margin-left: 10px
+    margin-right: 10px
+    min-height: 80vh
+    justify-content: center
+    .column
+      flex-grow: 1
+      margin: 10px
+      background-color: #BAB9F1
+      ul
+        text-align: center
+        min-height: 80vh
+        margin-top: 20px
+        padding: 0
+        li
+          list-style-type: none
+          cursor: pointer
+          background-color: #FFF9BA
+          padding: 10px 0
+          margin-top: 10px
+          min-height: 25vh
+          border-radius: 10px
+          transition: linear .5s
+        li:hover
+          background-color: #FFF04C
+
+      h2
+        color: #302EA3
+        background-color: #fff
+
+
+  
+    
