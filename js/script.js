@@ -83,7 +83,73 @@ $(function() {
   };
 
   //BOARD
-  var board = {
+  function Board(name){
+    var self = this;
+
+    this.id = randomString();
+    this.name = name;
+    this.$element = createBoard();
+
+    function createBoard(){
+      //CREATING BLOCKS
+      var $board = $('<div>').addClass('board'),
+        boardTitle = $('<h1>').addClass('title').text(self.name),
+        boardColumnContainer = $('<div>').addClassgrunt('column-container'),
+        boardAddColumn = $('<button>').addClass('create-column').text('Add a column'),
+        boardAddBoard = $('<button>').addClass('create-board').text('Add a board'),
+        boardDeleteBoard = $('<button>').addClass('delete-board').text('x');
+  
+    //ADDING EVENTS
+    $boardAddColumn.click(function(){
+    var name = prompt('Enter a column name');
+    var column = new Column(name);
+    board.addColumn(column);
+  });
+    $boardAddBoard.click(function(event){
+      self.addBoard(new Board(prompt('Enter the name of the board')));
+
+    });
+    $boardDeleteBoard.click(function(){
+      self.removeBoard();
+    });
+
+    //CONSTRUCTION BOARD ELEMENTS
+    $board.append($boardTitle)
+    .append($boardColumnContainer)
+    .append($boardAddColumn)
+    .append($boardAddBoard)
+    .append($boardDeleteBoard);
+
+    //RETURN BOARD
+    return $board;
+    }
+  }
+
+
+  
+  Board.prototype = {
+    addColumn: function(column) {
+      this.$element.append(column.$element);
+      initSortable();
+    },
+    $element: $('#board .column-container'),
+
+    removeBoard: function() {
+      this.$element.remove();
+    },
+
+    addBoard: function(board) {
+      this.$element.append(board.$element);
+    }
+  };
+
+  function initSortable() {
+    $('.column-card-list').sortable({
+      connectWith: '.column-card-list',
+      placeholder: 'card-placeholder'
+    }).disableSelection();
+  }
+  /*var board = {
     name: 'Kanban Board',
     addColumn: function(column) {
       this.$element.append(column.$element);
@@ -106,6 +172,7 @@ $(function() {
     var column = new Column(name);
     board.addColumn(column);
   });
+  
 
   // CREATE COLUMN
   var todoColumn = new Column('To do');
@@ -123,6 +190,6 @@ $(function() {
 
   // ADDING CARDS TO THE COLUMNS
   todoColumn.addCard(card1);
-  doingColumn.addCard(card2);
+  doingColumn.addCard(card2);*/
 
 }); //END
